@@ -1,5 +1,5 @@
 const Rules = {
-  "*.{js,vue}": ["eslint", "prettier --write"],
+  '*.{js,vue}': ['eslint'],
 };
 
 export default Rules;
