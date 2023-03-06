@@ -11,9 +11,19 @@
 
 ---
 
+確保 git 已經初始化後執行
+
 ```zsh
 npm install
-npm run prepare
+```
+
+專案內部檔案在 `main.js`, `vite.config.js`, `App.vue` 分別留下未遵照 ESLint 規範的程式碼，在操作 `git` 流程時會將會報錯  
+需要修正才能通過檢查，目前設立的攔截點在 `commit` 與 `git push` 前，
+
+```shell
+  git commit -m 'testing',
+
+  git push
 ```
 
 # **安裝與專案設置**
