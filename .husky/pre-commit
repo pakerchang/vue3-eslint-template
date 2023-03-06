@@ -2,4 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx lint-staged --config .lintstaged.pre-commit.js
-echo "Pre commit end"
+
+echo "Pre commit 階段結束"
