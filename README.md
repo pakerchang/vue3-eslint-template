@@ -17,23 +17,34 @@
 npm install
 ```
 
-專案內部檔案在 `main.js`, `vite.config.js`, `App.vue` 留下未遵照 ESLint 規範的程式碼，在操作 `git commit -m` 時會將會報錯
-
-> 區塊有上述檔案時，或自行新增的檔案有在`git staged`時
-
-需要修正才能通過檢查，目前設立的攔截點在 `commit` 與 `git push` 執行前，當檢查結束後在 terminal 看到 `Pre commit / Pre push 階段結束` 的字樣
+目前設立的攔截點在 `commit` 與 `git push` 執行前，當檢查結束後在 terminal 看到 `Pre commit / Pre push 階段結束` 的字樣
 
 ```shell
   git commit -m 'testing'
   git push
 ```
 
-請不要將 ESLint 修正結果 push 上去
-可以透過下列指令跳過檢查
+專案內部檔案在 `App.vue` 留下未遵照 `.eslintrc.json` 規範的程式碼，在`App.vue`編輯或自行新增的檔案有在 `git staged`
+操作 `git commit -m` 時會將會報錯，需要修正才能通過 `pre-commit` 的檢查
+Ex:
+
+```html
+// App.vue
+<script setup>
+  // ... code
+  const newString = 'string';
+</script>
+```
+
+請不要將 ESLint 修正結果 push 上去，可以透過下列指令跳過檢查
 
 ```shell
   git commit -m 'commit example' --no-verify
 ```
+
+### 設置檔案
+
+相關設定的檔案可以參照 `.lintstaged.pre-commit.js`, `.lintstaged.pre-push.js`, `.eslintrc.json` 以及 `.husky` 資料夾底下的檔案
 
 # **安裝與專案設置**
 
@@ -68,7 +79,7 @@ npm install lint-staged
 {
   // .lintstaged.pre-commit.js
   const Rules = {
-    "*.{js,vue}": ["eslint", "prettier --write"],
+    '*.{js,vue}': ['eslint', 'prettier --write'],
   };
 
   export default Rules;
@@ -120,8 +131,8 @@ Example:
 {
   // .lintstagedrc.cjs
   module.export = {
-    "*": "cmd",
-    "*2": ["cmd-1", "cmd-2"],
+    '*': 'cmd',
+    '*2': ['cmd-1', 'cmd-2'],
   };
 }
 ```
