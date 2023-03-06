@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged -g .lintstaged.pre-push.js
+npx lint-staged --config .lintstaged.pre-push.js
 echo "Pre push end"
