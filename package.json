@@ -8,9 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint:pre-commit": "npx husky add .husky/pre-commit 'npx lint-staged --config .lintstaged.pre-commit.js'",
-    "lint:commit-msg": "npx husky add .husky/commit-msg 'npx --no -- commitlint --edit $\"{1}\"'",
     "lint:pre-push": "npx husky add .husky/pre-push 'npx lint-staged --config .lintstaged.pre-push.js'",
-    "prepare": "npx husky install && npm run lint:pre-commit && npm run lint:commit-msg && npm run lint:pre-push"
+    "prepare": "npx husky install && npm run lint:pre-commit && npm run lint:pre-push"
   },
   "dependencies": {
     "vue": "^3.2.45"

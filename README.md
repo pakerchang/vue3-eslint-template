@@ -17,13 +17,22 @@
 npm install
 ```
 
-專案內部檔案在 `main.js`, `vite.config.js`, `App.vue` 分別留下未遵照 ESLint 規範的程式碼，在操作 `git` 流程時會將會報錯  
-需要修正才能通過檢查，目前設立的攔截點在 `commit` 與 `git push` 前，
+專案內部檔案在 `main.js`, `vite.config.js`, `App.vue` 留下未遵照 ESLint 規範的程式碼，在操作 `git commit -m` 時會將會報錯
+
+> 區塊有上述檔案時，或自行新增的檔案有在`git staged`時
+
+需要修正才能通過檢查，目前設立的攔截點在 `commit` 與 `git push` 執行前，當檢查結束後在 terminal 看到 `Pre commit / Pre push 階段結束` 的字樣
 
 ```shell
-  git commit -m 'testing',
-
+  git commit -m 'testing'
   git push
+```
+
+請不要將 ESLint 修正結果 push 上去
+可以透過下列指令跳過檢查
+
+```shell
+  git commit -m 'commit example' --no-verify
 ```
 
 # **安裝與專案設置**
@@ -46,21 +55,12 @@ npm install lint-staged
     // ... scripts
     "lint:pre-commit": "npx husky add .husky/pre-commit 'npx lint-staged --config .lintstaged.pre-commit.js'",
     "lint:pre-push": "npx husky add .husky/pre-push 'npx lint-staged --config .lintstaged.pre-push.js'",
-    "prepare": "npx husky install && npm run lint:pre-commit && npm run lint:commit-msg && npm run lint:pre-push"
+    "prepare": "npx husky install && npm run lint:pre-commit && npm run lint:pre-push"
   }
 }
 ```
 
-關於 `prepare` 所定義的行為基本分為兩個階段
-
-#### **初始化 husky**
-
-執行結束後會專案目錄下生成出一個名為 `.husky` 的資料夾
-
-#### **執行 husky**
-
-透過 husky 指令在 `.husky` 路徑下生成一個 `pre-commit` 的檔案，並指向 `git hook pre-commit`  
-同時定義執行指令 `npx lint-staged`
+`prepare` 的設定將在後續使用此專案第一次建立環境使用 `npm install` 時自動執行
 
 ## **`lint-staged` 設置**
 
