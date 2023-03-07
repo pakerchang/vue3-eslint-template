@@ -214,6 +214,7 @@ description // 基於前面的分類後，簡述此次改動的核心功能
 > 實際規範仍然可以依照團隊需求作細部改動，包括 types 的新增或定義變更
 
 **Commit 自動化工具:**
+
 [cz-cli](https://github.com/commitizen/cz-cli)
 
 [git-cz](https://github.com/streamich/git-cz)
