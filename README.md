@@ -82,6 +82,7 @@ npm run lint:init
 npm install husky
 npm install lint-staged
 npm install @commitlint/cli
+npm install @commitlint/config-conventional
 ```
 
 ### 設置 `package.json`
