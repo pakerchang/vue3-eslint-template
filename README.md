@@ -7,7 +7,6 @@
 1. husky
 2. lint-staged
 3. commitlint
-4. eslint
 
 # Usage:
 
@@ -41,7 +40,7 @@ npm run lint:init
 </script>
 ```
 
-在`App.vue`編輯或自行新增的檔案有在 `staged changes` 時，執行 `git commit -m` 會報錯，需要符合 ESLint 規範之後才能通過 `pre-commit` 的檢查， commit 才能正常寫入 `git repository`
+在`App.vue`編輯或自行新增的檔案有在 `staged changes` 時，執行 `git commit -m` 未符合 ESLint 會報錯，修正後通過 `pre-commit` 的檢查 commit 才能正常寫入 `git repository`
 
 #### commit-msg:
 
@@ -170,7 +169,7 @@ Example:
 
 ---
 
-針對 `git commit` 提交內容規範驗證的正則套件，將 commit 在 [AngularJS Git Commit](https://gist.github.com/stephenparish/9941e89d80e2bc58a153#format-of-the-commit-message) 拆分成核心的三個區塊 `type`, `scope`, `subject`
+針對 `git commit` 提交內容規範驗證的正則套件，將 commit 基於 [AngularJS Git Commit](https://gist.github.com/stephenparish/9941e89d80e2bc58a153#format-of-the-commit-message) 拆分成核心的三個區塊 `type`, `scope`, `subject`
 一般參照的基本定義：
 **Types:**
 
@@ -207,13 +206,11 @@ scopes: [
 
 **Subject:**
 
-```
-description // 基於前面的分類後，簡述此次改動的核心功能
-```
+基於前面的分類後，簡述此次改動的核心功能
 
 > 實際規範仍然可以依照團隊需求作細部改動，包括 types 的新增或定義變更
 
-**Commit 自動化工具:**
+**commit 自動化工具:**
 
 [cz-cli](https://github.com/commitizen/cz-cli)
 
