@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx --no -- commitlint --edit --config .commitlintrc.json
-
+npx --no -- commitlint --edit 
 echo "commit-msg 階段結束"
