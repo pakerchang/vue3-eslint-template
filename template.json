@@ -1,0 +1,36 @@
+{
+  "name": "@pakerzhang/vue3-template",
+  "version": "1.0.0",
+  "description": "Vue3 && prettier && eslint template",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint:pre-commit": "npx husky add .husky/pre-commit 'npx lint-staged --config .lintstaged.pre-commit.js'",
+    "lint:commit-msg": "npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1} --config .commitlintrc.json'",
+    "lint:init": "npx husky install && npm run lint:pre-commit  && npm run lint:commit-msg",
+    "prepare": "npx husky install"
+  },
+  "dependencies": {
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.11.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "vite": "^4.1.0",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "keyword": ["Vue", "husky", "eslint", "prettier", "lint-staged", "js", "javascript", "commitlint"]
+}
