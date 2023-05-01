@@ -3,4 +3,3 @@
 
 npx lint-staged --config .lintstaged.pre-commit.js
 
-echo "Pre commit 階段結束"
