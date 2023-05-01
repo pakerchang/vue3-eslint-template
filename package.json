@@ -1,7 +1,8 @@
 {
-  "name": "husky-example",
-  "private": false,
+  "name": "@pakerzhang/vue3-template",
   "version": "1.0.0",
+  "description": "Vue3 && prettier && eslint template",
+  "private": false,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -30,5 +31,15 @@
     "lint-staged": "^13.1.2",
     "vite": "^4.1.0",
     "vite-plugin-eslint": "^1.8.1"
-  }
+  },
+  "keyword": [
+    "Vue",
+    "husky",
+    "eslint",
+    "prettier",
+    "lint-staged",
+    "js",
+    "javascript",
+    "commitlint"
+  ]
 }
