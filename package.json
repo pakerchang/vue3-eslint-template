@@ -12,7 +12,7 @@
     "template",
     "template.json"
   ],
-  "keyword": [
+  "keywords": [
     "Vue",
     "husky",
     "eslint",
